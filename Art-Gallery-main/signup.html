@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art Gallery Sign Up</title>
+    <style>
+         body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #130f40;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .signup-container {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .signup-container h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            outline: none;
+        }
+
+        .signup-btn {
+            background-color: #130f40;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+
+        .signup-btn:hover {
+            background-color: #2980b9;
+        }
+
+        .footer {
+            color: #888;
+            margin-top: 20px;
+        }
+       
+    </style>
+</head>
+<body>
+
+<div class="signup-container">
+    <h1>Art Gallery Sign Up</h1>
+    <div class="input-group">
+        <label for="fullname">Full Name:</label>
+        <input type="text" id="fullname" placeholder="Enter your full name" required>
+    </div>
+    <div class="input-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter your email" required>
+    </div>
+    <div class="input-group">
+        <label for="signup-username">Username:</label>
+        <input type="text" id="signup-username" placeholder="Choose a username" required>
+    </div>
+    <div class="input-group">
+        <label for="signup-password">Password:</label>
+        <input type="password" id="signup-password" placeholder="Choose a password" required>
+    </div>
+    <button class="signup-btn" onclick="openLogin()">Sign Up</button>
+    <button class=""
+    <p class="footer">Already have an account? <a href="login.html">Login</a></p>
+</div>
+
+<script>
+    function signup() {
+        var fullname = document.getElementById("fullname").value;
+        var email = document.getElementById("email").value;
+        var password = document.getElementById("password").value;
+
+        // Basic validation
+        if (fullname === "" || email === "" || password === "") {
+            alert("Please fill in all fields.");
+            return;
+        }
+
+        alert("Sign Up successfully!");
+    }
+    function openLogin() {
+        window.location.href = "index.html";
+    }
+</script>
+
+</body>
+</html>

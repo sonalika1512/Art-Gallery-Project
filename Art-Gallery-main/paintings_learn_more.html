@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="paintings_learn_more.css">
+</head>
+
+<body>
+    <div class="heading">
+        <h1 style="color:rgb(3, 246, 238);">PAINTINGS</h1>
+    </div>
+    <section class="arts" id="arts">
+        <div class="box-container">
+            <div class="artist">
+                <img src="img/leonardo.jpg" alt="">
+                <div class="info">
+                    <h3>Leonardo da Vinci</h3>
+                    <img class="divider" src="images/header-img.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="box-container">
+            <div class="box">
+                <img src="img/Mona Lisa.jpg" alt="">
+                <div class="info">
+                    <h3 class="tooltip" onclick="showImage('Mona Lisa.jpg', 100)">Mona Lisa 
+                        <span class="tooltiptext">VIEW</span>
+                    </h3>                    
+                    <p>
+                    </p>
+                </div>
+            </div>
+            <div class="box">
+                <img src="img/Last Supper.jpg" alt="">
+                <div class="info">
+                    <h3 class="tooltip" onclick="showImage('Last Supper.jpg')">Last Supper
+                        <span class="tooltiptext">VIEW</span>
+                    </h3>
+                    <p>
+                    </p>
+                </div>
+            </div>
+            <div class="box">
+                <img src="img/Salvator Mundi.jpg" alt="">
+                <div class="info">
+                    <h3 class="tooltip" onclick="showImage('Salvator Mundi.jpg')">Salvator Mundi
+                        <span class="tooltiptext">VIEW</span>
+                    </h3>
+                    <p>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="space"></div>
+        <div class="box-container">
+            <div class="artist">
+                <img src="img/Picasso.jpg" alt="">
+                <div class="info">
+                    <h3>Pablo Picasso</h3>
+                    <img class="divider" src="images/header-img.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="box-container">
+            <div class="box">
+                <img src="img/three musicians.jpg" alt="">
+                <div class="info">
+                    <h3 class="tooltip" onclick="showImage('three musicians.jpg')">Three Musicians
+                        <span class="tooltiptext">VIEW</span>
+                    </h3>
+                    <p>
+                    </p>
+                </div>
+            </div>
+            <div class="box">
+                <img src="img/Guernica.jpg" alt="">
+                <div class="info">
+                    <h3 class="tooltip" onclick="showImage('Guernica.jpg')">Guernica
+                        <span class="tooltiptext">VIEW</span>
+                    </h3>
+                    <p>
+                    </p>
+                </div>
+            </div>
+            <div class="box">
+                <img src="img/Girl Before A Mirror.jpg" alt="">
+                <div class="info">
+                    <h3 class="tooltip" onclick="showImage('Girl Before A Mirror.jpg')">Girl Before A Mirror
+                        <span class="tooltiptext">VIEW</span>
+                    </h3>
+                    <p>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="space"></div>
+        <div class="box-container">
+            <div class="artist">
+                <img src="img/Piet Mondrian.jpg" alt="">
+                <div class="info">
+                    <h3>Piet Mondrian</h3>
+                    <img class="divider" src="images/header-img.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="box-container">
+            <div class="box">
+                <img src="img/Wood With Beach Trees.jpg" alt="">
+                <div class="info">
+                    <h3 class="tooltip" onclick="showImage('Wood With Beach Trees.jpg')">Wood With Beach Trees
+                        <span class="tooltiptext">VIEW</span>
+                    </h3>
+                    <p>
+                    </p>
+                </div>
+            </div>
+            <div class="box">
+                <img src="img/The Red Tree.jpg" alt="">
+                <div class="info">
+                    <h3 class="tooltip" onclick="showImage('The Red Tree.jpg')">The Red Tree
+                        <span class="tooltiptext">VIEW</span>
+                    </h3>
+                    <p>
+                    </p>
+                </div>
+            </div>
+            <div class="box">
+                <img src="img/Mill In The Evening.jpg" alt="">
+                <div class="info">
+                    <h3 class="tooltip" onclick="showImage('Mill In The Evening.jpg')">Mill In The Evening
+                        <span class="tooltiptext">VIEW</span>
+                    </h3>
+                    <p>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="modal" class="modal" style="display: none;">
+        <div class="modal-content" id="modal-content">
+        </div>
+    </div>
+
+    <script>
+        function showImage(imageSrc, price) {
+    var modal = document.getElementById("modal");
+    var modalContent = document.getElementById("modal-content");
+
+    // Create an image element inside the modal
+    var image = document.createElement('img');
+    image.src = 'img/' + imageSrc;
+    image.style.maxWidth = '90%';
+    image.style.maxHeight = '90%';
+
+    // Clear previous content
+    modalContent.innerHTML = '';
+
+    // Append the image to the modal content
+    modalContent.appendChild(image);
+
+    // Create button container
+    var buttonContainer = document.createElement('div');
+    buttonContainer.className = 'btn-container';
+
+    // Create price element
+    var priceElement = document.createElement('p');
+    priceElement.textContent = 'Price: Rs.' + price;
+    priceElement.className = 'price';
+
+    // Create buy button
+    var buyButton = document.createElement('button');
+    buyButton.textContent = 'Buy';
+    buyButton.className = 'btn btn-buy';
+
+    // Create add to cart button
+    var cartButton = document.createElement('button');
+    cartButton.textContent = 'Add to Cart';
+    cartButton.className = 'btn btn-cart';
+
+    var cartIcon = document.createElement('i');
+    cartIcon.className = 'fas fa-shopping-cart';
+
+    // Append elements to button container
+    buttonContainer.appendChild(priceElement);
+    buttonContainer.appendChild(buyButton);
+    buttonContainer.appendChild(cartButton);
+    cartButton.appendChild(cartIcon);
+
+    // Append button container to modal content
+    modalContent.appendChild(buttonContainer);
+
+    // Display the modal
+    modal.style.display = 'flex';
+
+    // Close the modal when clicked anywhere outside the image
+    modal.onclick = function (event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    };
+}
+
+    </script>
+</body>
+
+</html>
